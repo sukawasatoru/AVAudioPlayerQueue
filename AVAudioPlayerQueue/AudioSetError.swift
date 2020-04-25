@@ -13,6 +13,6 @@
 // limitations under the License.
 
 enum AudioSetError: Error {
-    case AssetNotFound(String)
-    case Player(Error)
+    case assetNotFound(String)
+    case player(Error)
 }

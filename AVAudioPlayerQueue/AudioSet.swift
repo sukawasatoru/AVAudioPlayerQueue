@@ -18,9 +18,9 @@ import UIKit
 class AudioSet: NSObject, AVAudioPlayerDelegate {
     private var players: [AVAudioPlayer]
     private var currentPlayer: AVAudioPlayer?
-    private var playerIterator: IndexingIterator<Array<AVAudioPlayer>>?
+    private var playerIterator: IndexingIterator<[AVAudioPlayer]>?
 
-    var delegate: AudioSetDelegate?
+    weak var delegate: AudioSetDelegate?
 
     /// Create an instance
     ///
@@ -30,7 +30,7 @@ class AudioSet: NSObject, AVAudioPlayerDelegate {
     static func create(assets: [(String, String)]) throws -> AudioSet {
         let assets: [(NSDataAsset, String)] = try assets.map { (name, hint) in
             guard let asset = NSDataAsset(name: name) else {
-                throw AudioSetError.AssetNotFound("\((name, hint))")
+                throw AudioSetError.assetNotFound("\((name, hint))")
             }
             return (asset, hint)
         }
@@ -47,7 +47,7 @@ class AudioSet: NSObject, AVAudioPlayerDelegate {
             audioSet.setPlayers(list: list)
             return audioSet
         } catch let err {
-            throw AudioSetError.Player(err)
+            throw AudioSetError.player(err)
         }
     }
 
@@ -88,7 +88,7 @@ class AudioSet: NSObject, AVAudioPlayerDelegate {
     }
 
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
-        log.debug("audioPlayerDecodeErrorDidOccur error: \(error)")
+        log.debug("audioPlayerDecodeErrorDidOccur error: \(String(describing: error))")
     }
 
     func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {

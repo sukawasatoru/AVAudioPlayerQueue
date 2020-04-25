@@ -111,6 +111,7 @@
 				D68DDC2224543AEB00E060CB /* Check SE files */,
 				CF52EA89392126EA8D2A28A6 /* Resources */,
 				D68DDC282454661400E060CB /* Carthage */,
+				D68DDC34245478F700E060CB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -205,6 +206,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "CARTHAGE=\n\nif [ -x /opt/local/bin/carthage ]\nthen\n  CARTHAGE=/opt/local/bin/carthage\nelif [ -x /usr/local/bin/carthage ]\nthen\n  CARTHAGE=/usr/local/bin/carthage\nelse\n  echo \"\\\"carthage\\\" not found\"\n  return 1\nfi\n\n$CARTHAGE copy-frameworks\n";
+		};
+		D68DDC34245478F700E060CB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF52E28DD1496C9465A4E405 /* AudioSetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */; };
 		CF52E46CB196A9220A86876E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */; };
 		CF52E4D1D4BC4CB990822985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */; };
 		CF52E5BB8B24A9E28EDF5812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E121C0CE4F1E75168815 /* ViewController.swift */; };
+		CF52E7C6C758823C1250F62C /* AudioSetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E3C7AC498D3E28F2F04B /* AudioSetDelegate.swift */; };
 		CF52E98387DDA6B6FBC82FC6 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = CF52EC88EE454135311B8124 /* sounds */; };
+		CF52E991A02713B20BDB5B1C /* AudioSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52ED7D48467B94192EE869 /* AudioSet.swift */; };
 		CF52EB3C81050CC04F17B882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52EC83ABFDF70E24CA7FE9 /* Main.storyboard */; };
 		CF52EE1FB3EAA544AC7BC5EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */; };
 		CF52EF1C8007CF4D9F36001E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E3D5F6A0E7221881FFE3 /* SceneDelegate.swift */; };
@@ -19,12 +22,15 @@
 /* Begin PBXFileReference section */
 		CF52E121C0CE4F1E75168815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF52E2D45A744D02A409AF76 /* AVAudioPlayerQueue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVAudioPlayerQueue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF52E3C7AC498D3E28F2F04B /* AudioSetDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSetDelegate.swift; sourceTree = "<group>"; };
 		CF52E3D5F6A0E7221881FFE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CF52E401C43C3C7A9DAD2459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSetError.swift; sourceTree = "<group>"; };
 		CF52EBA00A016E1E41751806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		CF52EC88EE454135311B8124 /* sounds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
+		CF52ED7D48467B94192EE869 /* AudioSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSet.swift; sourceTree = "<group>"; };
 		CF52EF30846CC0F79C5AD20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +59,9 @@
 				CF52ECD834D724E3547FFF36 /* Resources */,
 				CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */,
 				CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */,
+				CF52ED7D48467B94192EE869 /* AudioSet.swift */,
+				CF52E3C7AC498D3E28F2F04B /* AudioSetDelegate.swift */,
+				CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */,
 				CF52EBA00A016E1E41751806 /* Info.plist */,
 				CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */,
 				CF52EC83ABFDF70E24CA7FE9 /* Main.storyboard */,
@@ -174,6 +183,9 @@
 				CF52EE1FB3EAA544AC7BC5EA /* AppDelegate.swift in Sources */,
 				CF52EF1C8007CF4D9F36001E /* SceneDelegate.swift in Sources */,
 				CF52E5BB8B24A9E28EDF5812 /* ViewController.swift in Sources */,
+				CF52E991A02713B20BDB5B1C /* AudioSet.swift in Sources */,
+				CF52E7C6C758823C1250F62C /* AudioSetDelegate.swift in Sources */,
+				CF52E28DD1496C9465A4E405 /* AudioSetError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

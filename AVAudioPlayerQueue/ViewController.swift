@@ -15,12 +15,36 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var se1AudioSet: AudioSet!
+    var se2AudiSet: AudioSet!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        do {
+            let se1List = (1...10).map { data in
+                ("se1-\(data)", "mp3")
+            }
+            se1AudioSet = try AudioSet.create(assets: se1List)
+
+            let se2List = (1...10).map { data in
+                ("se2-\(data)", "mp3")
+            }
+            se2AudiSet = try AudioSet.create(assets: se2List)
+        } catch let err {
+            fatalError("failed to load assets: \(err)")
+        }
     }
 
     @IBAction
-    func onClickButton() {
-        print("onClick")
+    func onSE1Clicked() {
+        se1AudioSet.stop()
+        se1AudioSet.play()
+    }
+
+    @IBAction
+    func onSE2Clicked() {
+        se2AudiSet.stop()
+        se2AudiSet.play()
     }
 }

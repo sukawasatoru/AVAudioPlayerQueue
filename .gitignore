@@ -126,3 +126,6 @@ DerivedData/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/jetbrains,xcode
+
+AVAudioPlayerQueue/Assets.xcassets/**/*.mp3
+AVAudioPlayerQueue/Resources/sounds

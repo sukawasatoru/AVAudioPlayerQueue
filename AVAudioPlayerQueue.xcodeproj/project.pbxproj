@@ -10,6 +10,7 @@
 		CF52E46CB196A9220A86876E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */; };
 		CF52E4D1D4BC4CB990822985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */; };
 		CF52E5BB8B24A9E28EDF5812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E121C0CE4F1E75168815 /* ViewController.swift */; };
+		CF52E98387DDA6B6FBC82FC6 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = CF52EC88EE454135311B8124 /* sounds */; };
 		CF52EB3C81050CC04F17B882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52EC83ABFDF70E24CA7FE9 /* Main.storyboard */; };
 		CF52EE1FB3EAA544AC7BC5EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */; };
 		CF52EF1C8007CF4D9F36001E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E3D5F6A0E7221881FFE3 /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 		CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF52EBA00A016E1E41751806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		CF52EC88EE454135311B8124 /* sounds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		CF52EF30846CC0F79C5AD20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,13 +50,14 @@
 		CF52E780EFA7C799BF45D4DA /* AVAudioPlayerQueue */ = {
 			isa = PBXGroup;
 			children = (
-				CF52EBA00A016E1E41751806 /* Info.plist */,
+				CF52ECD834D724E3547FFF36 /* Resources */,
 				CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */,
-				CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */,
 				CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */,
+				CF52EBA00A016E1E41751806 /* Info.plist */,
+				CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */,
+				CF52EC83ABFDF70E24CA7FE9 /* Main.storyboard */,
 				CF52E3D5F6A0E7221881FFE3 /* SceneDelegate.swift */,
 				CF52E121C0CE4F1E75168815 /* ViewController.swift */,
-				CF52EC83ABFDF70E24CA7FE9 /* Main.storyboard */,
 			);
 			path = AVAudioPlayerQueue;
 			sourceTree = "<group>";
@@ -67,6 +70,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		CF52ECD834D724E3547FFF36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF52EC88EE454135311B8124 /* sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,6 +87,7 @@
 			buildPhases = (
 				CF52EFA4747F1735CE29D091 /* Sources */,
 				CF52E35D435394A639865FC0 /* Frameworks */,
+				D68DDC2224543AEB00E060CB /* Check SE files */,
 				CF52EA89392126EA8D2A28A6 /* Resources */,
 			);
 			buildRules = (
@@ -127,10 +139,32 @@
 				CF52E4D1D4BC4CB990822985 /* Assets.xcassets in Resources */,
 				CF52E46CB196A9220A86876E /* LaunchScreen.storyboard in Resources */,
 				CF52EB3C81050CC04F17B882 /* Main.storyboard in Resources */,
+				CF52E98387DDA6B6FBC82FC6 /* sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D68DDC2224543AEB00E060CB /* Check SE files */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check SE files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -eu\n\ncheck_path() {\n  local -r STEM=\"$1\"\n  local -r EXTENSION=\"$2\"\n\n  for NUM in $(seq 1 10)\n  do\n    if [[ ! -r $PROJECT_DIR/AVAudioPlayerQueue/Resources/sounds/$STEM-$NUM.$EXTENSION ]]\n    then\n      echo \"need to setup se files. please excute the \\\"seetup-se.sh\\\".\"\n      return 1\n    fi\n  done\n}\n\ncheck_path se1 mp3\ncheck_path se2 mp3\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF52EFA4747F1735CE29D091 /* Sources */ = {

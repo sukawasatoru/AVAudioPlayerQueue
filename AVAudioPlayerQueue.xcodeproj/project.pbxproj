@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		CF52EB3C81050CC04F17B882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52EC83ABFDF70E24CA7FE9 /* Main.storyboard */; };
 		CF52EE1FB3EAA544AC7BC5EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */; };
 		CF52EF1C8007CF4D9F36001E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E3D5F6A0E7221881FFE3 /* SceneDelegate.swift */; };
+		D68DDC3124546BCC00E060CB /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68DDC3024546BCC00E060CB /* SwiftyBeaver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CF52EC88EE454135311B8124 /* sounds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		CF52ED7D48467B94192EE869 /* AudioSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSet.swift; sourceTree = "<group>"; };
 		CF52EF30846CC0F79C5AD20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D68DDC3024546BCC00E060CB /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68DDC3124546BCC00E060CB /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,7 @@
 			children = (
 				CF52E56FB85B7C7542DB37DF /* Products */,
 				CF52E780EFA7C799BF45D4DA /* AVAudioPlayerQueue */,
+				D68DDC23245463EF00E060CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +89,14 @@
 				CF52EC88EE454135311B8124 /* sounds */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D68DDC23245463EF00E060CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D68DDC3024546BCC00E060CB /* SwiftyBeaver.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +110,7 @@
 				CF52E35D435394A639865FC0 /* Frameworks */,
 				D68DDC2224543AEB00E060CB /* Check SE files */,
 				CF52EA89392126EA8D2A28A6 /* Resources */,
+				D68DDC282454661400E060CB /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -173,6 +186,26 @@
 			shellPath = /bin/bash;
 			shellScript = "set -eu\n\ncheck_path() {\n  local -r STEM=\"$1\"\n  local -r EXTENSION=\"$2\"\n\n  for NUM in $(seq 1 10)\n  do\n    if [[ ! -r $PROJECT_DIR/AVAudioPlayerQueue/Resources/sounds/$STEM-$NUM.$EXTENSION ]]\n    then\n      echo \"need to setup se files. please excute the \\\"seetup-se.sh\\\".\"\n      return 1\n    fi\n  done\n}\n\ncheck_path se1 mp3\ncheck_path se2 mp3\n";
 		};
+		D68DDC282454661400E060CB /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "CARTHAGE=\n\nif [ -x /opt/local/bin/carthage ]\nthen\n  CARTHAGE=/opt/local/bin/carthage\nelif [ -x /usr/local/bin/carthage ]\nthen\n  CARTHAGE=/usr/local/bin/carthage\nelse\n  echo \"\\\"carthage\\\" not found\"\n  return 1\nfi\n\n$CARTHAGE copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -181,11 +214,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF52EE1FB3EAA544AC7BC5EA /* AppDelegate.swift in Sources */,
-				CF52EF1C8007CF4D9F36001E /* SceneDelegate.swift in Sources */,
-				CF52E5BB8B24A9E28EDF5812 /* ViewController.swift in Sources */,
 				CF52E991A02713B20BDB5B1C /* AudioSet.swift in Sources */,
 				CF52E7C6C758823C1250F62C /* AudioSetDelegate.swift in Sources */,
 				CF52E28DD1496C9465A4E405 /* AudioSetError.swift in Sources */,
+				CF52EF1C8007CF4D9F36001E /* SceneDelegate.swift in Sources */,
+				CF52E5BB8B24A9E28EDF5812 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +249,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XJYRJ9KNQE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AVAudioPlayerQueue/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tinyport.AVAudioPlayerQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -230,8 +270,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XJYRJ9KNQE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AVAudioPlayerQueue/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tinyport.AVAudioPlayerQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -349,7 +396,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

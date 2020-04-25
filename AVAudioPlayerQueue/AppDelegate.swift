@@ -13,11 +13,27 @@
 // limitations under the License.
 
 import UIKit
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
+
+private func createLoggerDestination() -> BaseDestination {
+    var dest = ConsoleDestination()
+    #if DEBUG
+    dest.minLevel = .debug
+    #else
+    dest.minLevel = .warning
+    #endif
+
+    return dest
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        true
+        log.addDestination(createLoggerDestination())
+
+        return true
     }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

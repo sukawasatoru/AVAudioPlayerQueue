@@ -38,12 +38,16 @@ class ViewController: UIViewController {
 
     @IBAction
     func onSE1Clicked() {
+        log.debug("onSE1Clicked")
+
         se1AudioSet.stop()
         se1AudioSet.play()
     }
 
     @IBAction
     func onSE2Clicked() {
+        log.debug("onSE2Clicked")
+
         se2AudiSet.stop()
         se2AudiSet.play()
     }

@@ -129,3 +129,4 @@ DerivedData/
 
 AVAudioPlayerQueue/Assets.xcassets/**/*.mp3
 AVAudioPlayerQueue/Resources/sounds
+Carthage

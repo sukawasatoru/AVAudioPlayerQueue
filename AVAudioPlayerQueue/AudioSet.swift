@@ -15,8 +15,6 @@
 import AVFoundation
 import UIKit
 
-private let DEBUG = true
-
 class AudioSet: NSObject, AVAudioPlayerDelegate {
     private var players: [AVAudioPlayer]
     private var currentPlayer: AVAudioPlayer?
@@ -63,6 +61,8 @@ class AudioSet: NSObject, AVAudioPlayerDelegate {
             return
         }
 
+        log.debug("play")
+
         playerIterator = players.makeIterator()
         currentPlayer = playerIterator?.next()
         currentPlayer?.play()
@@ -70,10 +70,14 @@ class AudioSet: NSObject, AVAudioPlayerDelegate {
 
     /// Stop playback
     func stop() {
+        log.debug("stop")
+
         stopImpl()
     }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        log.debug("audioPlayerDidFinishPlaying")
+
         currentPlayer = playerIterator?.next()
         guard let player = currentPlayer else {
             stopImpl()
@@ -84,21 +88,15 @@ class AudioSet: NSObject, AVAudioPlayerDelegate {
     }
 
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
-        if DEBUG {
-            print("audioPlayerDecodeErrorDidOccur error: \(error)")
-        }
+        log.debug("audioPlayerDecodeErrorDidOccur error: \(error)")
     }
 
     func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
-        if DEBUG {
-            print("audioPlayerBeginInterruption")
-        }
+        log.debug("audioPlayerBeginInterruption")
     }
 
     func audioPlayerEndInterruption(_ player: AVAudioPlayer, withOptions flags: Int) {
-        if DEBUG {
-            print("audioPlayerEndInterruption")
-        }
+        log.debug("audioPlayerEndInterruption")
     }
 
     private func setPlayers(list: [AVAudioPlayer]) {

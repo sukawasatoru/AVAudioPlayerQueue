@@ -1,6 +1,25 @@
 AVAudioPlayerQueue
 ==================
 
+Building the app
+----------------
+
+Clone this repository and before opening the project, run `./bootstrap.sh` to fetch assets and libraries.
+
+### Requirements ###
+
+- Xcode 11.3 or higher
+- [Cartharge](https://github.com/Carthage/Carthage)
+- [SwiftLint](https://realm.github.io/SwiftLint/)
+
+Credit
+------
+
+A number of third-party libraries and assets are used by this app:
+
+- [SwiftyBeaver](https://swiftybeaver.com/)
+- [効果音ラボ](https://soundeffect-lab.info/)
+
 LICENSE
 -------
 

@@ -58,6 +58,18 @@ copy_file() {
 
 trap cleanup EXIT
 
+if ! command -v swiftlint > /dev/null
+then
+  echo "this project uses SwiftLint. please install SwiftLint and try again to continue."
+  exit 1
+fi
+
+if ! command -v carthage > /dev/null
+then
+  echo "this project uses Carthage. please install Carthage and try again to continue."
+  exit 1
+fi
+
 if [[ ${1:-} != -accept ]]; then
   echo "please accept license agreement and execute with \"-accept\" argument"
   open "https://soundeffect-lab.info/agreement/"
@@ -87,3 +99,5 @@ copy_assets "$SOUND1_FILE" "$ASSETS_PATH" "sounds" se1
 copy_assets "$SOUND2_FILE" "$ASSETS_PATH" "sounds" se2
 copy_file "$SOUND1_FILE" "$SOUNDS_DIR" se1
 copy_file "$SOUND2_FILE" "$SOUNDS_DIR" se2
+
+carthage bootstrap --platform iOS

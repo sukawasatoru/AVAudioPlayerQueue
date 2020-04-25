@@ -185,7 +185,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "set -eu\n\ncheck_path() {\n  local -r STEM=\"$1\"\n  local -r EXTENSION=\"$2\"\n\n  for NUM in $(seq 1 10)\n  do\n    if [[ ! -r $PROJECT_DIR/AVAudioPlayerQueue/Resources/sounds/$STEM-$NUM.$EXTENSION ]]\n    then\n      echo \"need to setup se files. please excute the \\\"seetup-se.sh\\\".\"\n      return 1\n    fi\n  done\n}\n\ncheck_path se1 mp3\ncheck_path se2 mp3\n";
+			shellScript = "set -eu\n\ncheck_path() {\n  local -r STEM=\"$1\"\n  local -r EXTENSION=\"$2\"\n\n  for NUM in $(seq 1 10)\n  do\n    if [[ ! -r $PROJECT_DIR/AVAudioPlayerQueue/Resources/sounds/$STEM-$NUM.$EXTENSION ]]\n    then\n      echo \"need to setup se files. please excute the \\\"bootstrap.sh\\\".\"\n      return 1\n    fi\n  done\n}\n\ncheck_path se1 mp3\ncheck_path se2 mp3\n";
 		};
 		D68DDC282454661400E060CB /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;

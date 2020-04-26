@@ -15,40 +15,60 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var se1AudioSet: AudioSet!
-    var se2AudiSet: AudioSet!
+    var audioSE1AudioSet: AudioSet!
+    var audioSE2AudioSet: AudioSet!
+    var queueSE1AudioSet: AudioSet!
+    var queueSE2AudioSet: AudioSet!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         do {
             let se1List = (1...10).map { data in
-                ("se1-\(data)", "mp3")
+                ("sounds/se1-\(data)", "mp3")
             }
-            se1AudioSet = try AudioSet.create(assets: se1List)
+            audioSE1AudioSet = try AVAudioPlayerAudioSet.create(assets: se1List)
+            queueSE1AudioSet = try AVQueuePlayerAudioSet.create(assets: se1List)
 
             let se2List = (1...10).map { data in
-                ("se2-\(data)", "mp3")
+                ("sounds/se2-\(data)", "mp3")
             }
-            se2AudiSet = try AudioSet.create(assets: se2List)
+            audioSE2AudioSet = try AVAudioPlayerAudioSet.create(assets: se2List)
+            queueSE2AudioSet = try AVQueuePlayerAudioSet.create(assets: se2List)
         } catch let err {
             fatalError("failed to load assets: \(err)")
         }
     }
 
     @IBAction
-    func onSE1Clicked() {
-        log.debug("onSE1Clicked")
+    func onAudioSE1Clicked() {
+        log.debug("onAudioSE1Clicked")
 
-        se1AudioSet.stop()
-        se1AudioSet.play()
+        audioSE1AudioSet.stop()
+        audioSE1AudioSet.play()
     }
 
     @IBAction
-    func onSE2Clicked() {
-        log.debug("onSE2Clicked")
+    func onAudioSE2Clicked() {
+        log.debug("onAudioSE2Clicked")
 
-        se2AudiSet.stop()
-        se2AudiSet.play()
+        audioSE2AudioSet.stop()
+        audioSE2AudioSet.play()
+    }
+
+    @IBAction
+    func onQueueSE1Clicked() {
+        log.debug("onQueueSE1Clicked")
+
+        queueSE1AudioSet.stop()
+        queueSE1AudioSet.play()
+    }
+
+    @IBAction
+    func onQueueSE2Clicked() {
+        log.debug("onQueueSE2Clicked")
+
+        queueSE2AudioSet.stop()
+        queueSE2AudioSet.play()
     }
 }

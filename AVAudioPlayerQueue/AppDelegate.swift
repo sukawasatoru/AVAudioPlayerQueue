@@ -20,7 +20,7 @@ let log = SwiftyBeaver.self
 private func createLoggerDestination() -> BaseDestination {
     var dest = ConsoleDestination()
     #if DEBUG
-    dest.minLevel = .debug
+    dest.minLevel = .verbose
     #else
     dest.minLevel = .warning
     #endif

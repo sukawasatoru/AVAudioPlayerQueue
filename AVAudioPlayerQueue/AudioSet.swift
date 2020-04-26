@@ -12,100 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import AVFoundation
-import UIKit
-
-class AudioSet: NSObject, AVAudioPlayerDelegate {
-    private var players: [AVAudioPlayer]
-    private var currentPlayer: AVAudioPlayer?
-    private var playerIterator: IndexingIterator<[AVAudioPlayer]>?
-
-    weak var delegate: AudioSetDelegate?
-
-    /// Create an instance
-    ///
-    /// - Parameter voiceList: a list of the pair of the asset name and file type hint
-    /// - Returns: an instance
-    /// - Throws: throws error if failed to load assets
-    static func create(assets: [(String, String)]) throws -> AudioSet {
-        let assets: [(NSDataAsset, String)] = try assets.map { (name, hint) in
-            guard let asset = NSDataAsset(name: name) else {
-                throw AudioSetError.assetNotFound("\((name, hint))")
-            }
-            return (asset, hint)
-        }
-
-        let audioSet = AudioSet()
-        do {
-            let list: [AVAudioPlayer] = try assets.map { data in
-                let (asset, hint) = data
-                let player = try AVAudioPlayer(data: asset.data, fileTypeHint: hint)
-                player.delegate = audioSet
-                return player
-            }
-
-            audioSet.setPlayers(list: list)
-            return audioSet
-        } catch let err {
-            throw AudioSetError.player(err)
-        }
-    }
-
-    override private init() {
-        self.players = []
-    }
-
+protocol AudioSet: AnyObject {
     /// Start playback
-    func play() {
-        if playerIterator != nil || players.isEmpty {
-            return
-        }
-
-        log.debug("play")
-
-        playerIterator = players.makeIterator()
-        currentPlayer = playerIterator?.next()
-        currentPlayer?.play()
-    }
+    func play()
 
     /// Stop playback
-    func stop() {
-        log.debug("stop")
-
-        stopImpl()
-    }
-
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        log.debug("audioPlayerDidFinishPlaying")
-
-        currentPlayer = playerIterator?.next()
-        guard let player = currentPlayer else {
-            stopImpl()
-            delegate?.onComplete()
-            return
-        }
-        player.play()
-    }
-
-    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
-        log.debug("audioPlayerDecodeErrorDidOccur error: \(String(describing: error))")
-    }
-
-    func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
-        log.debug("audioPlayerBeginInterruption")
-    }
-
-    func audioPlayerEndInterruption(_ player: AVAudioPlayer, withOptions flags: Int) {
-        log.debug("audioPlayerEndInterruption")
-    }
-
-    private func setPlayers(list: [AVAudioPlayer]) {
-        players = list
-    }
-
-    private func stopImpl() {
-        currentPlayer?.stop()
-        currentPlayer = nil
-        playerIterator = nil
-    }
+    func stop()
 }

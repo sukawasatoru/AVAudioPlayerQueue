@@ -15,39 +15,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lo-Zh-8nK">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7wl-8z-in0">
+                                <rect key="frame" x="0.0" y="60" width="414" height="192"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66U-OF-Rsm">
-                                        <rect key="frame" x="105" y="8" width="30" height="30"/>
-                                        <state key="normal" title="SE1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="RYw-lK-VfB"/>
+                                        </constraints>
+                                        <state key="normal" title="AVAudioPlayerSet SE1"/>
                                         <connections>
-                                            <action selector="onSE1Clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="chG-GK-RaF"/>
+                                            <action selector="onAudioSE1Clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="chG-GK-RaF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9G-z0-u7u">
-                                        <rect key="frame" x="105" y="90" width="30" height="30"/>
-                                        <state key="normal" title="SE2"/>
+                                        <rect key="frame" x="0.0" y="48" width="414" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="yNH-c9-D5B"/>
+                                        </constraints>
+                                        <state key="normal" title="AVAudioPlayerSet SE2"/>
                                         <connections>
-                                            <action selector="onSE2Clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ris-jj-ZpZ"/>
+                                            <action selector="onAudioSE2Clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ris-jj-ZpZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-nD-swX">
+                                        <rect key="frame" x="0.0" y="96" width="414" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="lRR-jk-89C"/>
+                                        </constraints>
+                                        <state key="normal" title="AVQueuePlayerSet SE1"/>
+                                        <connections>
+                                            <action selector="onQueueSE1Clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Axn-Ur-bRS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuF-fD-jUM">
+                                        <rect key="frame" x="0.0" y="144" width="414" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="yun-Bi-20e"/>
+                                        </constraints>
+                                        <state key="normal" title="AVQueuePlayerSet SE2"/>
+                                        <connections>
+                                            <action selector="onQueueSE2Clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="k4H-tR-Ff0"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="66U-OF-Rsm" firstAttribute="centerX" secondItem="5lo-Zh-8nK" secondAttribute="centerX" id="52M-KC-HtN"/>
-                                    <constraint firstItem="V9G-z0-u7u" firstAttribute="bottom" secondItem="5lo-Zh-8nK" secondAttribute="bottomMargin" id="Exc-kI-SKy"/>
-                                    <constraint firstItem="V9G-z0-u7u" firstAttribute="top" secondItem="66U-OF-Rsm" secondAttribute="bottom" constant="52" id="QXK-Na-eu7"/>
-                                    <constraint firstItem="66U-OF-Rsm" firstAttribute="top" secondItem="5lo-Zh-8nK" secondAttribute="topMargin" id="Wmo-bg-mve"/>
-                                    <constraint firstItem="66U-OF-Rsm" firstAttribute="leading" secondItem="V9G-z0-u7u" secondAttribute="leading" id="a7E-VX-AHo"/>
-                                    <constraint firstItem="V9G-z0-u7u" firstAttribute="leading" secondItem="5lo-Zh-8nK" secondAttribute="leading" constant="105" id="wov-0G-xdw"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="5lo-Zh-8nK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Zd-Iq-q5L"/>
-                            <constraint firstItem="5lo-Zh-8nK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sbk-f9-N5i"/>
+                            <constraint firstItem="7wl-8z-in0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="AAl-cn-3BJ"/>
+                            <constraint firstItem="7wl-8z-in0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MJA-mH-Wpd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7wl-8z-in0" secondAttribute="trailing" id="Phx-bS-c5N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

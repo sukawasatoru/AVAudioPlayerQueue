@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF52E1CFF1FE11BD812B2C20 /* AVAudioPlayerAudioSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52EC86B98C056BC5FAAB49 /* AVAudioPlayerAudioSet.swift */; };
 		CF52E28DD1496C9465A4E405 /* AudioSetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */; };
+		CF52E42A511B351E0C281B7C /* AVQueuePlayerAudioSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E928AE2AACD24C786CBD /* AVQueuePlayerAudioSet.swift */; };
 		CF52E46CB196A9220A86876E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */; };
 		CF52E4D1D4BC4CB990822985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */; };
 		CF52E5BB8B24A9E28EDF5812 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E121C0CE4F1E75168815 /* ViewController.swift */; };
@@ -28,8 +30,10 @@
 		CF52E401C43C3C7A9DAD2459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF52E928AE2AACD24C786CBD /* AVQueuePlayerAudioSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQueuePlayerAudioSet.swift; sourceTree = "<group>"; };
 		CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSetError.swift; sourceTree = "<group>"; };
 		CF52EBA00A016E1E41751806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		CF52EC86B98C056BC5FAAB49 /* AVAudioPlayerAudioSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAudioPlayerAudioSet.swift; sourceTree = "<group>"; };
 		CF52EC88EE454135311B8124 /* sounds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
 		CF52ED7D48467B94192EE869 /* AudioSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSet.swift; sourceTree = "<group>"; };
 		CF52EF30846CC0F79C5AD20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				CF52ED7D48467B94192EE869 /* AudioSet.swift */,
 				CF52E3C7AC498D3E28F2F04B /* AudioSetDelegate.swift */,
 				CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */,
+				CF52EC86B98C056BC5FAAB49 /* AVAudioPlayerAudioSet.swift */,
+				CF52E928AE2AACD24C786CBD /* AVQueuePlayerAudioSet.swift */,
 				CF52EBA00A016E1E41751806 /* Info.plist */,
 				CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */,
 				CF52EC83ABFDF70E24CA7FE9 /* Main.storyboard */,
@@ -160,9 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF52E4D1D4BC4CB990822985 /* Assets.xcassets in Resources */,
+				CF52E98387DDA6B6FBC82FC6 /* sounds in Resources */,
 				CF52E46CB196A9220A86876E /* LaunchScreen.storyboard in Resources */,
 				CF52EB3C81050CC04F17B882 /* Main.storyboard in Resources */,
-				CF52E98387DDA6B6FBC82FC6 /* sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +242,8 @@
 				CF52E991A02713B20BDB5B1C /* AudioSet.swift in Sources */,
 				CF52E7C6C758823C1250F62C /* AudioSetDelegate.swift in Sources */,
 				CF52E28DD1496C9465A4E405 /* AudioSetError.swift in Sources */,
+				CF52E1CFF1FE11BD812B2C20 /* AVAudioPlayerAudioSet.swift in Sources */,
+				CF52E42A511B351E0C281B7C /* AVQueuePlayerAudioSet.swift in Sources */,
 				CF52EF1C8007CF4D9F36001E /* SceneDelegate.swift in Sources */,
 				CF52E5BB8B24A9E28EDF5812 /* ViewController.swift in Sources */,
 			);

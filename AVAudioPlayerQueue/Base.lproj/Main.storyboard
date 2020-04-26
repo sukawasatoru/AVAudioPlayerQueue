@@ -16,10 +16,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7wl-8z-in0">
-                                <rect key="frame" x="0.0" y="60" width="414" height="192"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="240"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66U-OF-Rsm">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQr-1h-73o">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="rf8-A6-fBZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Audio Category"/>
+                                        <connections>
+                                            <action selector="onAudioCategoryClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Crk-ba-AvE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66U-OF-Rsm">
+                                        <rect key="frame" x="0.0" y="48" width="414" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="RYw-lK-VfB"/>
                                         </constraints>
@@ -29,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9G-z0-u7u">
-                                        <rect key="frame" x="0.0" y="48" width="414" height="48"/>
+                                        <rect key="frame" x="0.0" y="96" width="414" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="yNH-c9-D5B"/>
                                         </constraints>
@@ -39,7 +49,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcV-nD-swX">
-                                        <rect key="frame" x="0.0" y="96" width="414" height="48"/>
+                                        <rect key="frame" x="0.0" y="144" width="414" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="lRR-jk-89C"/>
                                         </constraints>
@@ -49,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuF-fD-jUM">
-                                        <rect key="frame" x="0.0" y="144" width="414" height="48"/>
+                                        <rect key="frame" x="0.0" y="192" width="414" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="yun-Bi-20e"/>
                                         </constraints>
@@ -69,6 +79,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="audioCategoryButton" destination="AQr-1h-73o" id="lZ2-jU-lVC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CF52E1CFF1FE11BD812B2C20 /* AVAudioPlayerAudioSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52EC86B98C056BC5FAAB49 /* AVAudioPlayerAudioSet.swift */; };
 		CF52E28DD1496C9465A4E405 /* AudioSetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */; };
+		CF52E3BEC567A4CFCC58939D /* AudioServicesAudioSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E1F4019A2CA7AF2ED496 /* AudioServicesAudioSet.swift */; };
 		CF52E42A511B351E0C281B7C /* AVQueuePlayerAudioSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52E928AE2AACD24C786CBD /* AVQueuePlayerAudioSet.swift */; };
 		CF52E46CB196A9220A86876E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52E6166B79FBC783D7EBF7 /* LaunchScreen.storyboard */; };
 		CF52E4D1D4BC4CB990822985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		CF52E121C0CE4F1E75168815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF52E1F4019A2CA7AF2ED496 /* AudioServicesAudioSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioServicesAudioSet.swift; sourceTree = "<group>"; };
 		CF52E2D45A744D02A409AF76 /* AVAudioPlayerQueue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVAudioPlayerQueue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF52E3C7AC498D3E28F2F04B /* AudioSetDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSetDelegate.swift; sourceTree = "<group>"; };
 		CF52E3D5F6A0E7221881FFE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				CF52ECD834D724E3547FFF36 /* Resources */,
 				CF52E9000E2BBCC172F1F3D9 /* Assets.xcassets */,
 				CF52E48493DC63A33F6CFDC1 /* AppDelegate.swift */,
+				CF52E1F4019A2CA7AF2ED496 /* AudioServicesAudioSet.swift */,
 				CF52ED7D48467B94192EE869 /* AudioSet.swift */,
 				CF52E3C7AC498D3E28F2F04B /* AudioSetDelegate.swift */,
 				CF52EAF08AB8C1E6A2EE473D /* AudioSetError.swift */,
@@ -136,11 +139,6 @@
 			attributes = {
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = tinyport;
-				TargetAttributes = {
-					CF52ED2E4769562DF718C7AA = {
-						DevelopmentTeam = XJYRJ9KNQE;
-					};
-				};
 			};
 			buildConfigurationList = CF52E6954A023D1BFA1F2703 /* Build configuration list for PBXProject "AVAudioPlayerQueue" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -239,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF52EE1FB3EAA544AC7BC5EA /* AppDelegate.swift in Sources */,
+				CF52E3BEC567A4CFCC58939D /* AudioServicesAudioSet.swift in Sources */,
 				CF52E991A02713B20BDB5B1C /* AudioSet.swift in Sources */,
 				CF52E7C6C758823C1250F62C /* AudioSetDelegate.swift in Sources */,
 				CF52E28DD1496C9465A4E405 /* AudioSetError.swift in Sources */,
@@ -275,6 +274,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XJYRJ9KNQE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -287,6 +288,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tinyport.AVAudioPlayerQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AVAudioPlayerQueue;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,6 +298,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XJYRJ9KNQE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +312,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tinyport.AVAudioPlayerQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AVAudioPlayerQueue;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

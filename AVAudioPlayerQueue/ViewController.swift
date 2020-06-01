@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     private var audioSE2AudioSet: AudioSet!
     private var queueSE1AudioSet: AudioSet!
     private var queueSE2AudioSet: AudioSet!
+    private var audioServicesSE1AudioSet: AudioSet!
+    private var audioServicesSE2AudioSet: AudioSet!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +54,14 @@ class ViewController: UIViewController {
             }
             audioSE1AudioSet = try AVAudioPlayerAudioSet.create(assets: se1List)
             queueSE1AudioSet = try AVQueuePlayerAudioSet.create(assets: se1List)
+            audioServicesSE1AudioSet = try AudioServicesAudioSet.create(assets: se1List)
 
             let se2List = (1...10).map { data in
                 ("sounds/se2-\(data)", "mp3")
             }
             audioSE2AudioSet = try AVAudioPlayerAudioSet.create(assets: se2List)
             queueSE2AudioSet = try AVQueuePlayerAudioSet.create(assets: se2List)
+            audioServicesSE2AudioSet = try AudioServicesAudioSet.create(assets: se2List)
         } catch let err {
             fatalError("failed to load assets: \(err)")
         }
@@ -100,6 +104,22 @@ class ViewController: UIViewController {
 
         queueSE2AudioSet.stop()
         queueSE2AudioSet.play()
+    }
+
+    @IBAction
+    private func onAudioServicesSE1Clicked() {
+        log.debug("onAudioServicesSE1Clicked")
+
+        audioServicesSE1AudioSet.stop()
+        audioServicesSE1AudioSet.play()
+    }
+
+    @IBAction
+    private func onAudioServicesSE2Clicked() {
+        log.debug("onAudioServicesSE2Clicked")
+
+        audioServicesSE2AudioSet.stop()
+        audioServicesSE2AudioSet.play()
     }
 }
 
